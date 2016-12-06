@@ -19,18 +19,17 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
-
     <application
+        android:name=".app.QQDemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_funchat"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".app.QQDemoApplication">
+        android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity">
         </activity>
-
-        <activity android:name=".ui.activity.SplashActivity"
+        <activity
+            android:name=".ui.activity.SplashActivity"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -38,20 +37,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.activity.LoginActivity"/>
-
         <activity android:name=".ui.activity.RegisterActivity"/>
-
         <activity android:name=".ui.activity.AddFriendActivity"/>
-
         <activity android:name=".ui.activity.ChatActivity"/>
 
         <!-- 设置环信应用的AppKey -->
         <meta-data
             android:name="EASEMOB_APPKEY"
             android:value="1193161015115177#qqdemo"/>
-        <!-- 声明SDK所需的service SDK核心功能-->
+        <!-- 声明SDK所需的service SDK核心功能 -->
         <service
             android:name="com.hyphenate.chat.EMChatService"
             android:exported="true"/>
@@ -59,6 +54,7 @@
         <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+
                 <data android:scheme="package"/>
             </intent-filter>
             <!-- 可选filter -->
@@ -68,6 +64,8 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".ui.activity.TestActivity">
+        </activity>
     </application>
 
 </manifest>
